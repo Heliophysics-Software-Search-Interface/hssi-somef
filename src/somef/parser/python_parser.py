@@ -1,6 +1,6 @@
 import ast
 import os
-import tomli
+import tomllib
 import logging
 import re
 from pathlib import Path
@@ -86,7 +86,7 @@ def parse_pyproject_toml(file_path, metadata_result: Result, source):
                 source
             )
             with open(file_path, "rb") as f:
-                data = tomli.load(f)
+                data = tomllib.load(f)
                 
                 project = get_project_data(data)
                 
