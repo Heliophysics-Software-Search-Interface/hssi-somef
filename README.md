@@ -1,3 +1,22 @@
+# HSSI fork of SOMEF
+
+Changes
+
+* Updated dependencies to be compatible with python 3.13
+
+NOTE - in order to install and use this package with pip, it will NOT work 
+UNLESS you use pip's deprecated dependency resolver with:
+
+`pip install . --use-deprecated=legacy-resolver` 
+
+This is because the package 
+`morph-kgc` depends on a package of `falcon` <4.0.0, however, falcon versions
+before v4.0.0 do NOT work with python 3.13, and the `falcon` functionality 
+utilized indirectly by this package through `morph-kgc` seems to be
+compatible with `falcon 4.0.0` and above. So we just need to ignore that 
+dependency constraint by `morph-kgc`, and then it installs and runs perfectly 
+fine.
+
 # Software Metadata Extraction Framework (SOMEF)
 
 [![Documentation Status](https://readthedocs.org/projects/somef/badge/?version=latest)](https://somef.readthedocs.io/en/latest/?badge=latest)

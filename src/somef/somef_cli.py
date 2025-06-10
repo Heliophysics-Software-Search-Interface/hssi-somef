@@ -1,5 +1,4 @@
 import sys
-from uu import encode
 
 import validators
 import logging

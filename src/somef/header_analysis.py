@@ -227,7 +227,7 @@ def extract_categories(repo_data, repository_metadata: Result):
         groups.name = 'Group'
         data = data.drop('Group', axis=1).join(groups)
         if data['Group'].iloc[0] == 'unknown':
-            data['Group'].iloc[0] = np.NaN
+            data['Group'].iloc[0] = np.nan
 
         # to json
         group = data.loc[(data['Group'] != 'None') & pd.notna(data['Group'])]
